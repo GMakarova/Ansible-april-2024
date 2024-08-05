@@ -21,3 +21,15 @@
       name: mariadb
       state: started
       enabled: yes
+
+  - name: Install the latest version of Mariadb and MariaDB-server
+    ansible.builtin.package:
+      name:
+        - mariadb-server 
+      state: latest 
+  
+  - name:  Start and enable service 
+    service: 
+      name: mariadb
+      enabled: true
+      state: started
